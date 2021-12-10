@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Margin="5" Padding="5">
+            <MenuItem Header="_Файл">
+                <MenuItem Header="_Открыть" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Сохранить" Click="MenuItem_Click_2"/>
+                <Separator/>
+                <MenuItem Header="_Закрыть" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Grid.Row="1">
+            <ToolBar Margin="5" Padding="5">
+                <Button Content="Кисть"  Click="Button_Click_1"/>
+                <Menu>
+                    <MenuItem Header="Цвет кисти" >
+                        <MenuItem x:Name="Ink1" Header="_Черный" IsCheckable="True"  IsChecked="True" Click="MenuItem_Click_3"/>
+                        <MenuItem x:Name="Ink2" Header="_Красный" IsCheckable="True" Click="MenuItem_Click_4"/>
+                        <MenuItem x:Name="Ink3" Header="_Синий" IsCheckable="True" Click="MenuItem_Click_5"/>
+                    </MenuItem>
+                </Menu>
+                <Separator/>
+                <Button Content="Резинка" Click="Button_Click"/>
+                                 
+            </ToolBar>
+        </ToolBarTray>
+        <InkCanvas x:Name="InkCanvas1" Grid.Row="2" Margin="5">
+        </InkCanvas>
+    </Grid>
+</Window>
